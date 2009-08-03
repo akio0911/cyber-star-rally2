@@ -1,0 +1,26 @@
+<h1>Listing stars</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Lat</th>
+    <th>Lng</th>
+  </tr>
+
+<% @stars.each do |star| %>
+  <tr>
+    <td><%=h star.id %></td>
+    <td><%=h star.title %></td>
+    <td><%=h star.lat %></td>
+    <td><%=h star.lng %></td>
+    <td><%= link_to 'Show', star %></td>
+    <td><%= link_to 'Edit', edit_star_path(star) %></td>
+    <td><%= link_to 'Destroy', star, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New star', new_star_path %>

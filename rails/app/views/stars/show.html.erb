@@ -1,0 +1,23 @@
+<p>
+  <b>Id:</b>
+  <%=h @star.id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @star.title %>
+</p>
+
+<p>
+  <b>Lat:</b>
+  <%=h @star.lat %>
+</p>
+
+<p>
+  <b>Lng:</b>
+  <%=h @star.lng %>
+</p>
+
+
+<%= link_to 'Edit', edit_star_path(@star) %> |
+<%= link_to 'Back', stars_path %>
