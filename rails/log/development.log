@@ -1,0 +1,45 @@
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (139.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (117.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateStars (20090803134137)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "stars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "lat" float, "lng" float, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090803134137')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("stars")[0m
+
+
+Processing ApplicationController#index (for 116.91.18.174 at 2009-08-03 22:49:00) [GET]
+
+ActionController::RoutingError (No route matches "/starts" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing StarsController#index (for 116.91.18.174 at 2009-08-03 22:49:05) [GET]
+  [4;36;1mStar Load (1.2ms)[0m   [0;1mSELECT * FROM "stars" [0m
+Rendering template within layouts/stars
+Rendering stars/index
+Completed in 39ms (View: 31, DB: 1) | 200 OK [http://yuiseki.net/stars]
+
+
+Processing StarsController#index to json (for 116.91.18.174 at 2009-08-03 22:53:00) [GET]
+  [4;36;1mStar Load (1.1ms)[0m   [0;1mSELECT * FROM "stars" [0m
+Completed in 10ms (View: 3, DB: 1) | 406 Not Acceptable [http://yuiseki.net/stars.json]
