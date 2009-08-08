@@ -7,6 +7,7 @@ class StarsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @stars }
+      format.json  { render :json => @stars }
     end
   end
 
@@ -25,7 +26,10 @@ class StarsController < ApplicationController
   # GET /stars/new.xml
   def new
     @star = Star.new
-
+    
+    #@pos = request.mobile.position
+    #@ident = request.mobile.ident
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @star }
